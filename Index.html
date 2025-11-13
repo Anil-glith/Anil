@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Prioritizer — Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Task Prioritizer</h1>
+    <p class="subtitle">Reference: CAPSTONE Project (team 7) — embedded PDF included in the package.</p>
+    <a class="pdf-link" href="project_reference.pdf" target="_blank" rel="noopener">Open project PDF</a>
+  </header>
+
+  <main>
+    <section class="controls">
+      <form id="taskForm">
+        <input id="taskName" required placeholder="Task name" />
+        <input id="dueDate" type="date" />
+        <select id="userPriority" required>
+          <option value="3">High (3)</option>
+          <option value="2" selected>Medium (2)</option>
+          <option value="1">Low (1)</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="weights">
+        <label>Weights (W1 * user + W2 * urgency + W3 * age)</label>
+        <div class="weight-controls">
+          <label>W1 <input id="w1" type="number" value="0.5" step="0.1" /></label>
+          <label>W2 <input id="w2" type="number" value="0.3" step="0.1" /></label>
+          <label>W3 <input id="w3" type="number" value="0.2" step="0.1" /></label>
+        </div>
+        <button id="recalc">Recalculate Priorities</button>
+      </div>
+
+      <div class="actions">
+        <button id="undo">Undo last action</button>
+        <button id="clearCompleted">Clear completed</button>
+        <button id="export">Export JSON</button>
+      </div>
+    </section>
+
+    <section class="lists">
+      <div>
+        <h2>Pending Tasks (<span id="pendingCount">0</span>)</h2>
+        <ul id="taskList"></ul>
+      </div>
+      <div>
+        <h2>Completed Tasks (<span id="completedCount">0</span>)</h2>
+        <ul id="completedList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Implementation inspired by the uploaded CAPSTONE PDF: Task Prioritizer — uses weights, urgency and age to compute dynamic priority.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+                      </html>
