@@ -1,0 +1,26 @@
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
+body{margin:0;background:#f5f7fb;color:#0b1324;display:flex;flex-direction:column;min-height:100vh}
+header{background:linear-gradient(90deg,#2b9af3,#6b6bff);color:white;padding:24px}
+header h1{margin:0;font-size:1.6rem}
+.subtitle{opacity:0.9;margin-top:6px}
+.pdf-link{display:inline-block;margin-top:8px;color:white;text-decoration:underline}
+
+main{flex:1;display:grid;grid-template-columns:350px 1fr;gap:20px;padding:20px}
+.controls{background:white;padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(11,19,36,0.06)}
+.controls form{display:flex;gap:8px;align-items:center}
+.controls input, .controls select{padding:8px;border:1px solid #d7dbe7;border-radius:8px}
+.controls button{padding:8px 12px;border-radius:8px;border:0;background:#2b9af3;color:white;cursor:pointer}
+.weights{margin-top:12px}
+.weight-controls{display:flex;gap:8px;margin-top:8px}
+.weight-controls label{display:flex;flex-direction:column;font-size:0.85rem}
+.actions{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+
+.lists{display:flex;gap:20px}
+.lists > div{background:white;padding:16px;border-radius:12px;flex:1;box-shadow:0 6px 20px rgba(11,19,36,0.05)}
+ul{list-style:none;padding:0;margin:0}
+li.task{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;margin-bottom:8px;border:1px solid #eef2f7}
+.task .meta{display:flex;flex-direction:column;font-size:0.85rem}
+.task .controls button{margin-left:6px;padding:6px 8px;border-radius:6px;border:0;cursor:pointer}
+.small{font-size:0.85rem;color:#5c6b7b}
+footer{padding:12px;text-align:center;font-size:0.8rem;color:#486}
+@media(max-width:900px){main{grid-template-columns:1fr;}}
